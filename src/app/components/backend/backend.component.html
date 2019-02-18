@@ -1,0 +1,20 @@
+<div>
+  <h1 class="u-margin-top-medium">Servrová část</h1>
+    Tato část aplikace je naprosto nezávislá na klientské části.
+    Servrová část by ani klientsou část neměla žádným způsobem vracet.
+    Vystaví pouze REST API, přes které se klinetská část doptává na data.
+    <br>
+    <p class="mt-4">
+      Ku příkladu máme endpoint na adrese
+      <br><mark>POST /api/vytvor-uzivatele</mark>
+      <br>
+      Tento endpoint bude očekávat na vstupu objekt ve tvaru {{ {'name': 'string'}|json }}
+      A vrátí HTTP kód 200, takže vše prošlo.
+    </p>
+
+  <div class="row">
+    <div class="col u-text-center">
+      <app-next-btn [navigate]="'shrnuti'"></app-next-btn>
+    </div>
+  </div>
+</div>

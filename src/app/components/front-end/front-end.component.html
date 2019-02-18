@@ -1,0 +1,52 @@
+<div>
+  <h1 class="display-1 mt-5">Klientská část</h1>
+  <p class="u-margin-top-medium">
+    Tato část má za úkol zobrazovat uživateli to, co vidí a co možná mu nejvíc zpříjemnit pobyt na stránce.
+    Dále pak dynamicky mění stránku za chodu.
+  </p>
+  <div class="row mt-5">
+    <div class="col-md-6 col-sm-12 u-text-center">
+      <button mat-raised-button color="primary" (click)="page = 'first'">
+        Stránka 1
+      </button>
+    </div>
+    <div class="col-md-6 col-sm-12 u-text-center">
+      <button mat-raised-button color="primary" (click)="page = 'second'">
+        Stránka 2
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" *ngIf="page === 'first'">
+      <h2>První stránka</h2>
+    </div>
+    <div class="col" *ngIf="page === 'second'">
+      <h2>Druhá stránka</h2>
+    </div>
+  </div>
+  <hr>
+
+  <p>
+    Se servrovou částí komunikuje tak, že data získáná od uživatele zformátuje do JSON formátu
+    a pošle je zpět na server, kde to nějaký server (nejčastěji nginx) přeproxuje na servrovou část.
+    Jelikož se volání provádí asynchroně, tak jede aplikace pořád svižně.
+  </p>
+
+  <div class="u-margin-top-medium">
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Zadej své jméno" formControlName="name">
+      </mat-form-field>
+      <button mat-button [disabled]="!form.valid">Odeslat</button>
+    </form>
+    <p *ngIf="data">
+      Odeslaná data: {{ data|json }}
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col u-text-center">
+      <app-next-btn [navigate]="'/servrova-cast'"></app-next-btn>
+    </div>
+  </div>
+</div>
