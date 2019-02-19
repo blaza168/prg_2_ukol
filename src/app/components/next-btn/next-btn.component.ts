@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 })
 export class NextBtnComponent implements OnInit {
 
+  @Input() color: string;
   @Input() navigate: string;
 
   constructor(public router: Router) { }

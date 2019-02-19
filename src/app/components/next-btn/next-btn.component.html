@@ -1,5 +1,5 @@
-<button mat-stroked-button color="primary" class="u-margin-top-medium">
-  <i class="material-icons next-icon" (click)="router.navigate([navigate])">
+<button mat-stroked-button color="primary" class="u-margin-top-medium" (click)="router.navigate([navigate])">
+  <i class="material-icons next-icon" [ngStyle]="{color: color ? color : 'white'}">
     arrow_forward
   </i>
 </button>

@@ -1,15 +1,20 @@
-<div class="center">
-  <div [@slideInOut]>
-    <p>
+ <div>
+    <p class="block-text mt-5 mb-3">
       Jedny z nejmodernějších webových aplikací jsou takzvané SPA (single page applications) aplikace.
-      Uživateli je při prvním požadavku na stránku navrácena stránka s primitivní HTML strukturou. (zobrazte si zdrojový kód této stránky)
-      Tato stránka si k sobě dotáhle obří balík javascriptu a stylů, které se pak starají o její funkčnost a vzhled.
-      První požadavek je sice delší, ale ty ostatní už jsou o dost rychlejší, protože se posílají jen data a né celá HTMlL stránka.
+      Fungují tak, že se načte primitivní HTML stránka, která se pak dynamicky updatuje.
+      Z toho vyplývá, že každá taková aplikace můsí mít minimálně dvě komponenty (klientskou a servrovou část).
+      Ke spolehlivému předávání požadavků se používá nějaký webový server, nejčastěji nginx.
     </p>
+   <div class="row mt-5 pt-4">
+     <div class="col">
+       <img class="img-block"
+            style="height: 500px"
+            src="assets/spa.png" />
+     </div>
+   </div>
     <div class="row">
       <div class="col u-text-center">
         <app-next-btn [navigate]="'klientska-cast'"></app-next-btn>
       </div>
     </div>
   </div>
-</div>

@@ -1,0 +1,53 @@
+<h2>Příklad dynamického měnění HTML</h2>
+<div class="row mt-5">
+  <div class="col-md-6 col-sm-12 u-text-center">
+    <button mat-stroked-button [color]="page === 'first' ? 'primary' : ''" (click)="page = 'first'">
+      Stránka 1
+    </button>
+  </div>
+  <div class="col-md-6 col-sm-12 u-text-center">
+    <button mat-stroked-button [color]="page === 'second' ? 'primary' : ''" (click)="page = 'second'">
+      Stránka 2
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col" *ngIf="page === 'first'">
+    <h3>První stránka</h3>
+    <p class="block-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam amet assumenda aut blanditiis consectetur
+      culpa cum dicta dolor dolorum exercitationem facilis fugiat harum hic illum incidunt ipsa minus, molestiae nemo
+      non officiis possimus quae quaerat repellendus, reprehenderit saepe sed, sequi sint tempora totam ullam vero
+      voluptate voluptatem? Amet, quia, soluta! Accusamus culpa deserunt eius, eos, explicabo hic illum modi natus,
+      necessitatibus officiis repudiandae similique tempora veritatis voluptas voluptatum! Fuga fugit illo mollitia,
+      natus nihil nulla! Ab aliquid aut consectetur consequatur, consequuntur cumque dignissimos dolorem doloribus eos
+      expedita fuga fugit,
+      nesciunt quaerat repellendus, repudiandae similique tempore velit. At eius, fugit?
+    </p>
+  </div>
+  <div class="col" *ngIf="page === 'second'">
+    <h3>Druhá stránka</h3>
+    <p class="block-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque deserunt doloribus dolorum fuga fugit impedit
+      ipsam, nemo possimus quasi, ratione recusandae rem reprehenderit, sit veritatis. A amet autem dicta eligendi, hic
+      ipsa, iure maxime molestiae nisi odio, officia rem repellendus voluptatem. Beatae, corporis culpa cum dolor
+      doloremque eius ipsum magnam maiores perferendis quaerat quis quos reprehenderit sequi sint tenetur velit
+      voluptatem? Ad, animi atque dicta ducimus enim iste magni minima nemo non praesentium, qui sint soluta vitae. A
+      beatae dicta dolorum expedita fugiat illum inventore ipsum laborum
+      nam neque nesciunt nihil nulla numquam obcaecati omnis optio, reiciendis soluta suscipit.
+    </p>
+  </div>
+</div>
+<hr>
+<h2>Příklad odesílání dat</h2>
+<div class="u-margin-top-medium">
+  <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Zadej své jméno" formControlName="name">
+    </mat-form-field>
+    <button mat-button [disabled]="!form.valid">Odeslat</button>
+  </form>
+  <p *ngIf="data">
+    Odeslaná data na server: {{ data|json }}
+  </p>
+</div>

@@ -6,6 +6,7 @@ import {StructureComponent} from './components/structure/structure.component';
 import {BackendComponent} from './components/backend/backend.component';
 import {SummaryComponent} from './components/summary/summary.component';
 import {EndComponent} from './components/end/end.component';
+import {FormComponent} from './components/form/form.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'shrnuti',
     component: SummaryComponent,
+  },
+  {
+    path: 'formular',
+    component: FormComponent,
   },
   {
     path: 'konec',

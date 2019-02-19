@@ -1,0 +1,32 @@
+<div class="center" style="background-color: white; border-radius: 10px; padding: 25px; width: 35%; top: 45%">
+  <h2 style="color: black">Kontaktní formulář</h2>
+  <div *ngIf="formSubmitted" style="color: forestgreen">
+    Formulář byl úspěšně odeslán.
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-5">
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <input matInput placeholder="Jméno" formControlName="name">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <input matInput placeholder="Známka" formControlName="mark">
+          <mat-error *ngIf="form.get('mark').hasError('min') || form.get('mark').hasError('max')">
+            Toto pole musí obsahovat hodnotu 1
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row"><div class="col">
+      <mat-form-field>
+        <textarea matInput placeholder="Komentář" formControlName="content"></textarea>
+      </mat-form-field>
+    </div></div>
+    <small>Kód aplikace dostupný na: </small>
+    <button mat-raised-button [disabled]="!form.valid">Odeslat</button>
+  </form>
+</div>

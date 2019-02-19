@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from '@angular/material';
+import {FeFunctionalityComponent} from '../fe-functionality/fe-functionality.component';
 
 @Component({
   selector: 'app-front-end',
@@ -9,25 +11,18 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class FrontEndComponent implements OnInit {
 
-  public page: string;
-
-  public data: any;
-
-  public form: FormGroup;
-
-  constructor(private title: Title) {
+  constructor(private title: Title, private dialog: MatDialog) {
     this.title.setTitle('Klientská část');
     this.buildForm();
   }
 
-  private buildForm(): void {
-    this.form = new FormGroup({
-        name: new FormControl(null, [Validators.required]),
+  public onExamplesClick(): void {
+    this.dialog.open(FeFunctionalityComponent, {
+      width: '75%',
     });
   }
 
-  public onFormSubmit(): void {
-    this.data = this.form.value;
+  private buildForm(): void {
   }
 
   ngOnInit() {
