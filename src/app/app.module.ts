@@ -15,6 +15,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { EndComponent } from './components/end/end.component';
 import { FeFunctionalityComponent } from './components/fe-functionality/fe-functionality.component';
 import { FormComponent } from './components/form/form.component';
+import { BackBtnComponent } from './components/back-btn/back-btn.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormComponent } from './components/form/form.component';
     EndComponent,
     FeFunctionalityComponent,
     FormComponent,
+    BackBtnComponent,
   ],
   imports: [
     BrowserModule,

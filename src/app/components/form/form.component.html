@@ -26,7 +26,11 @@
         <textarea matInput placeholder="Komentář" formControlName="content"></textarea>
       </mat-form-field>
     </div></div>
-    <small>Kód aplikace dostupný na: </small>
+    <small>
+      <span style="color: black">Kód aplikace dostupný na:&nbsp;</span>
+      <a href="https://github.com/blaza168/prg_2_ukol" target="_blank">https://github.com/blaza168/prg_2_ukol</a>
+    </small>
+    <br>
     <button mat-raised-button [disabled]="!form.valid">Odeslat</button>
   </form>
 </div>
